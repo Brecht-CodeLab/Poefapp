@@ -20,7 +20,7 @@ class _FancyFabState extends State<FancyFab>
   Animation<double> _animateIcon;
   Animation<double> _translateButton;
   Curve _curve = Curves.easeOut;
-  double _fabHeight = 56.0;
+  double _fabHeight = 56;
 
   @override
   initState() {
@@ -33,7 +33,7 @@ class _FancyFabState extends State<FancyFab>
         Tween<double>(begin: 0.0, end: 1.0).animate(_animationController);
     _buttonColor = ColorTween(
       begin: AppThemeColors.PrimaryColor,
-      end: AppThemeColors.SecondaryColor,
+      end: AppThemeColors.GroenUwMoederColor,
     ).animate(CurvedAnimation(
       parent: _animationController,
       curve: Interval(

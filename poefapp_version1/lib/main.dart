@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:poefapp_version1/colors/colors.dart';
 import 'package:poefapp_version1/fab.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -78,30 +80,54 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Text('POEFAPP 1.0', style: TextStyle(color: Colors.white)),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.black,
-        child: Container(
-          height: 50.0,
+        body: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25.0),
-                  topRight: Radius.circular(25.0)),
               gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [AppThemeColors.PrimaryColor, Colors.black])),
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [
+                0.0,
+                0.5,
+                1.0
+              ],
+                  colors: [
+                AppThemeColors.GroenUwMoederColor,
+                AppThemeColors.BlauwUwMoederColor,
+                AppThemeColors.ZwartUwMoederColor,
+              ])),
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Center(
+            child: Text('Welkom bij Scouts Jan Breydel',
+                style: TextStyle(color: Colors.white, fontSize: 50, fontFamily: )),
+          ),
         ),
-        notchMargin: 10.0,
-      ),
-      floatingActionButton:
-          FancyFab(), // This trailing comma makes auto-formatting nicer for build methods.
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-    );
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.black,
+          child: Container(
+            height: 50,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(50.0),
+                    topRight: Radius.circular(50.0)),
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [
+                      AppThemeColors.GroenUwMoederColor,
+                      AppThemeColors.BlauwUwMoederColor
+                    ])),
+          ),
+          notchMargin: 10.0,
+        ),
+        floatingActionButton: new Column(children: <Widget>[
+          new Padding(
+            padding: new EdgeInsets.symmetric(
+              vertical: 220,
+            ),
+          ),
+          new FancyFab(),
+        ]),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked);
   }
 }
