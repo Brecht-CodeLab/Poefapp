@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poefapp_version1/colors/colors.dart';
+import 'package:poefapp_version1/fab.dart';
 
 void main() {
   runApp(MyApp());
@@ -65,9 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void openMenu() {
-    setState(() {
-
-    });
+    setState(() {});
   }
 
   @override
@@ -98,15 +97,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   end: Alignment.centerRight,
                   colors: [AppThemeColors.PrimaryColor, Colors.black])),
         ),
+        notchMargin: 10.0,
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppThemeColors.PrimaryColor,
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add, color: Colors.black),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton:
+          FancyFab(), // This trailing comma makes auto-formatting nicer for build methods.
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-      floatingActionButtonAnimator: _openMenuAnim,
     );
   }
 }
