@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "336910879503",
+    "firebase_url": "https://poefapp-default-rtdb.firebaseio.com",
+    "project_id": "poefapp",
+    "storage_bucket": "poefapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336910879503:android:04db96278c1384387b4c7a",
+        "android_client_info": {
+          "package_name": "com.example.poefapp_version1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336910879503-h7btqqis53v38elcqku472a9mf3q5lgu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiOMVoPYMqcsxVgFvsEyrYqRMKIJSEmhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336910879503-h7btqqis53v38elcqku472a9mf3q5lgu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

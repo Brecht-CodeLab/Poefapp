@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:poefapp_version1/colors/colors.dart';
 import 'package:poefapp_version1/fab.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:poefapp_version1/graphs/graph1.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
-        fontFamily: 'RaleWay',
+        fontFamily: 'Montserrat',
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
@@ -91,42 +94,77 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: <Widget>[
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
               borderOnForeground: true,
               elevation: 30.0,
               color: AppThemeColors.LichtBlauw,
               shadowColor: AppThemeColors.ZwartUwMoederColor,
               margin: EdgeInsets.only(
-                top: 60.0,
-                left: 20.0,
-                right: 20.0,
-                bottom: 20.0
-              ),
+                  top: 60.0, left: 10.0, right: 10.0, bottom: 20.0),
               child: Column(
+                
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const ListTile(
-                    title: Text(
-                      'Goedemorgend Beermarter',
+                    title: Text('Goedenacht Beermarter',
                       style: TextStyle(
                         color: AppThemeColors.ZwartUwMoederColor,
-                        fontSize: 25,
+                        fontSize: 30,
                         fontWeight: FontWeight.w900,
-                      )
+                      ),
                     ),
-                    contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-                    subtitle: Text(
-                      'Je hebt momenteel nog €100',
-                      style: TextStyle(
-                        color: AppThemeColors.ZwartUwMoederColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w900,
-                      )
+                    contentPadding:
+                        EdgeInsets.only(left: 10.0, right: 50.0, top: 20.0),
+                    trailing: Icon(
+                      FlutterIcons.weather_night_partly_cloudy_mco,
+                      size: 100.0,
+                      color: AppThemeColors.Subtitle,
                     ),
                   ),
+                  const Padding(padding: const EdgeInsets.only(
+                    bottom: 0.0,
+                  )),
+                  const ListTile(
+                    subtitle: Text('Account: €100',
+                        style: TextStyle(
+                          color: AppThemeColors.Subtitle,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w900,
+                        )),
+                    contentPadding:
+                        EdgeInsets.only(left: 10.0, right: 10.0, bottom: 20.0),
+                  )
                 ],
               ),
-
-            )
+            ),
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
+              borderOnForeground: true,
+              elevation: 30.0,
+              color: AppThemeColors.ZwartUwMoederColor,
+              shadowColor: AppThemeColors.ZwartUwMoederColor,
+              margin: EdgeInsets.only(
+                  top: 20.0, left: 10.0, right: 10.0, bottom: 20.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  // const ListTile(
+                  //   title: Text('#aantalpinkes',
+                  //     style: TextStyle(
+                  //       color: Colors.white,
+                  //       fontSize: 20,
+                  //       fontWeight: FontWeight.w900,
+                  //     ),
+                  //   ),
+                  // ),
+                  LineChartSample2(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -150,14 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         //notchMargin: -20,
       ),
-      floatingActionButton: new Column(children: <Widget>[
-        new Padding(
-          padding: new EdgeInsets.symmetric(
-            vertical: 275,
-          ),
-        ),
-        new FancyFab(),
-      ]),
+      floatingActionButton: new FancyFab(),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       //floatingActionButton: FancyFab(),
     );

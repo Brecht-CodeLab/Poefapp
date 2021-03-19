@@ -8,4 +8,5 @@ class AppThemeColors {
   static const ZwartUwMoederColor = Color(0xFF000000);
   static const AppelBlauwUwMoederGroenColor = Color(0xFF246b6b);
   static const LichtBlauw = Color(0xFF75B1C4);
+  static const Subtitle = Color(0xFF393939);
 }

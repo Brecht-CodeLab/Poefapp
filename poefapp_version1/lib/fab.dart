@@ -35,7 +35,7 @@ class _FancyFabState extends State<FancyFab>
         Tween<double>(begin: 0.0, end: 1.0).animate(_animationController);
     _buttonColor = ColorTween(
             begin: AppThemeColors.PrimaryColor,
-            end: AppThemeColors.AppelBlauwUwMoederGroenColor)
+            end: AppThemeColors.Subtitle)
         .animate(CurvedAnimation(
       parent: _animationController,
       curve: Interval(
@@ -132,7 +132,7 @@ class _FancyFabState extends State<FancyFab>
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         Transform(
           transform: Matrix4.translationValues(
@@ -159,6 +159,11 @@ class _FancyFabState extends State<FancyFab>
           child: inbox(),
         ),
         toggle(),
+        Padding(
+          padding: const EdgeInsets.only(
+            bottom: 25.0,
+          ),
+        )
       ],
     );
   }
