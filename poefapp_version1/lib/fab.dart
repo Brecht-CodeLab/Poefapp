@@ -38,7 +38,7 @@ class _FancyFabState extends State<FancyFab>
       parent: _animationController,
       curve: Interval(
         0.00,
-        1.00,
+        1.0,
         curve: Curves.linear,
       ),
     ));
