@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poefapp_version1/colors/colors.dart';
 import 'package:poefapp_version1/fab.dart';
-import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter_icons/flutter_icons.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,15 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        fontFamily: 'RaleWay',
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
@@ -80,54 +71,95 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-        body: Container(
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: [
+              0.0,
+              0.5,
+              1.0
+            ],
+                colors: [
+              AppThemeColors.GroenUwMoederColor,
+              AppThemeColors.BlauwUwMoederColor,
+              AppThemeColors.ZwartUwMoederColor,
+            ])),
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        child: Column(
+          children: <Widget>[
+            Card(
+              borderOnForeground: true,
+              elevation: 30.0,
+              color: AppThemeColors.LichtBlauw,
+              shadowColor: AppThemeColors.ZwartUwMoederColor,
+              margin: EdgeInsets.only(
+                top: 60.0,
+                left: 20.0,
+                right: 20.0,
+                bottom: 20.0
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const ListTile(
+                    title: Text(
+                      'Goedemorgend Beermarter',
+                      style: TextStyle(
+                        color: AppThemeColors.ZwartUwMoederColor,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w900,
+                      )
+                    ),
+                    contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                    subtitle: Text(
+                      'Je hebt momenteel nog €100',
+                      style: TextStyle(
+                        color: AppThemeColors.ZwartUwMoederColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w900,
+                      )
+                    ),
+                  ),
+                ],
+              ),
+
+            )
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        //shape: CircularNotchedRectangle(),
+        color: Colors.black,
+        child: Container(
+          height: 50,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  stops: [
-                0.0,
-                0.5,
-                1.0
-              ],
-                  colors: [
-                AppThemeColors.GroenUwMoederColor,
-                AppThemeColors.BlauwUwMoederColor,
-                AppThemeColors.ZwartUwMoederColor,
-              ])),
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
-          child: Center(
-            child: Text('Welkom bij Scouts Jan Breydel',
-                style: TextStyle(color: Colors.white, fontSize: 50, fontFamily: )),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25.0),
+                topRight: Radius.circular(25.0)),
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  AppThemeColors.GroenUwMoederColor,
+                  AppThemeColors.BlauwUwMoederColor
+                ]),
           ),
         ),
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.black,
-          child: Container(
-            height: 50,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50.0),
-                    topRight: Radius.circular(50.0)),
-                gradient: LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                    colors: [
-                      AppThemeColors.GroenUwMoederColor,
-                      AppThemeColors.BlauwUwMoederColor
-                    ])),
+        //notchMargin: -20,
+      ),
+      floatingActionButton: new Column(children: <Widget>[
+        new Padding(
+          padding: new EdgeInsets.symmetric(
+            vertical: 275,
           ),
-          notchMargin: 10.0,
         ),
-        floatingActionButton: new Column(children: <Widget>[
-          new Padding(
-            padding: new EdgeInsets.symmetric(
-              vertical: 220,
-            ),
-          ),
-          new FancyFab(),
-        ]),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked);
+        new FancyFab(),
+      ]),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      //floatingActionButton: FancyFab(),
+    );
   }
 }

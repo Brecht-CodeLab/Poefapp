@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poefapp_version1/colors/colors.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:poefapp_version1/icons/icons.dart';
 
 class FancyFab extends StatefulWidget {
   final Function() onPressed;
@@ -32,9 +34,9 @@ class _FancyFabState extends State<FancyFab>
     _animateIcon =
         Tween<double>(begin: 0.0, end: 1.0).animate(_animationController);
     _buttonColor = ColorTween(
-      begin: AppThemeColors.PrimaryColor,
-      end: AppThemeColors.GroenUwMoederColor,
-    ).animate(CurvedAnimation(
+            begin: AppThemeColors.PrimaryColor,
+            end: AppThemeColors.AppelBlauwUwMoederGroenColor)
+        .animate(CurvedAnimation(
       parent: _animationController,
       curve: Interval(
         0.00,
@@ -76,7 +78,11 @@ class _FancyFabState extends State<FancyFab>
       child: FloatingActionButton(
         onPressed: null,
         tooltip: 'Add',
-        child: Icon(Icons.add),
+        child: Icon(
+          FontAwesome.beer,
+          color: Colors.black,
+        ),
+        backgroundColor: AppThemeColors.GroenUwMoederColor,
       ),
     );
   }
@@ -86,7 +92,11 @@ class _FancyFabState extends State<FancyFab>
       child: FloatingActionButton(
         onPressed: null,
         tooltip: 'Image',
-        child: Icon(Icons.image),
+        child: Icon(
+          FontAwesome5Solid.box,
+          color: Colors.black,
+        ),
+        backgroundColor: AppThemeColors.GroenUwMoederColor,
       ),
     );
   }
@@ -96,7 +106,11 @@ class _FancyFabState extends State<FancyFab>
       child: FloatingActionButton(
         onPressed: null,
         tooltip: 'Inbox',
-        child: Icon(Icons.inbox),
+        child: Icon(
+          FlutterIcons.drink_ent,
+          color: Colors.black,
+        ),
+        backgroundColor: AppThemeColors.GroenUwMoederColor,
       ),
     );
   }
@@ -118,7 +132,7 @@ class _FancyFabState extends State<FancyFab>
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Transform(
           transform: Matrix4.translationValues(
