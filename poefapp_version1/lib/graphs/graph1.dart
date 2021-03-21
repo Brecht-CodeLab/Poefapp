@@ -28,7 +28,8 @@ class _LineChartSample2State extends State<LineChartSample2> {
                 ),
                 color: AppThemeColors.Subtitle),
             child: Padding(
-              padding: const EdgeInsets.only(right: 18.0, left: 12.0, top: 50.0, bottom: 12),
+              padding: const EdgeInsets.only(
+                  right: 20.0, left: 12.0, top: 50.0, bottom: 12),
               child: LineChart(
                 showAvg ? avgData() : mainData(),
               ),
@@ -43,10 +44,13 @@ class _LineChartSample2State extends State<LineChartSample2> {
                 showAvg = !showAvg;
               });
             },
+            padding: const EdgeInsets.only(left: 20.0),
             child: Text(
               '#aantalbakken',
               style: TextStyle(
-                  fontSize: 20, color: Colors.white),
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w900),
             ),
           ),
         ),
@@ -77,8 +81,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
         bottomTitles: SideTitles(
           showTitles: true,
           reservedSize: 22,
-          getTextStyles: (value) =>
-              const TextStyle(color: AppThemeColors.LichtBlauw, fontWeight: FontWeight.bold, fontSize: 16),
+          getTextStyles: (value) => const TextStyle(
+              color: AppThemeColors.LichtBlauw,
+              fontWeight: FontWeight.bold,
+              fontSize: 16),
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
@@ -114,8 +120,9 @@ class _LineChartSample2State extends State<LineChartSample2> {
           margin: 12,
         ),
       ),
-      borderData:
-          FlBorderData(show: true, border: Border.all(color: AppThemeColors.LichtBlauw, width: 0.8)),
+      borderData: FlBorderData(
+          show: true,
+          border: Border.all(color: AppThemeColors.LichtBlauw, width: 0.8)),
       minX: 0,
       maxX: 11,
       minY: 0,
@@ -140,7 +147,8 @@ class _LineChartSample2State extends State<LineChartSample2> {
           ),
           belowBarData: BarAreaData(
             show: true,
-            colors: gradientColors.map((color) => color.withOpacity(0.3)).toList(),
+            colors:
+                gradientColors.map((color) => color.withOpacity(0.3)).toList(),
           ),
         ),
       ],
@@ -171,8 +179,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
         bottomTitles: SideTitles(
           showTitles: true,
           reservedSize: 22,
-          getTextStyles: (value) =>
-              const TextStyle(color: AppThemeColors.LichtBlauw, fontWeight: FontWeight.bold, fontSize: 16),
+          getTextStyles: (value) => const TextStyle(
+              color: AppThemeColors.LichtBlauw,
+              fontWeight: FontWeight.bold,
+              fontSize: 16),
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
@@ -196,11 +206,11 @@ class _LineChartSample2State extends State<LineChartSample2> {
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
-                return '10k';
+                return '10';
               case 3:
-                return '30k';
+                return '30';
               case 5:
-                return '50k';
+                return '50';
             }
             return '';
           },
@@ -208,8 +218,9 @@ class _LineChartSample2State extends State<LineChartSample2> {
           margin: 12,
         ),
       ),
-      borderData:
-          FlBorderData(show: true, border: Border.all(color: const Color(0xff37434d), width: 1)),
+      borderData: FlBorderData(
+          show: true,
+          border: Border.all(color: const Color(0xff37434d), width: 1)),
       minX: 0,
       maxX: 11,
       minY: 0,
@@ -227,8 +238,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
           ],
           isCurved: true,
           colors: [
-            ColorTween(begin: gradientColors[0], end: gradientColors[1]).lerp(0.2),
-            ColorTween(begin: gradientColors[0], end: gradientColors[1]).lerp(0.2),
+            ColorTween(begin: gradientColors[0], end: gradientColors[1])
+                .lerp(0.2),
+            ColorTween(begin: gradientColors[0], end: gradientColors[1])
+                .lerp(0.2),
           ],
           barWidth: 5,
           isStrokeCapRound: true,
@@ -236,8 +249,12 @@ class _LineChartSample2State extends State<LineChartSample2> {
             show: false,
           ),
           belowBarData: BarAreaData(show: true, colors: [
-            ColorTween(begin: gradientColors[0], end: gradientColors[1]).lerp(0.2).withOpacity(0.1),
-            ColorTween(begin: gradientColors[0], end: gradientColors[1]).lerp(0.2).withOpacity(0.1),
+            ColorTween(begin: gradientColors[0], end: gradientColors[1])
+                .lerp(0.2)
+                .withOpacity(0.1),
+            ColorTween(begin: gradientColors[0], end: gradientColors[1])
+                .lerp(0.2)
+                .withOpacity(0.1),
           ]),
         ),
       ],
