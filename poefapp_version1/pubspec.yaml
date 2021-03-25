@@ -31,6 +31,7 @@ dependencies:
   gradient_bottom_navigation_bar: ^1.0.0+4
   flutter_icons: ^1.1.0
   fl_chart: ^0.20.1
+  animations: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

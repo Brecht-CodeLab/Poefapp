@@ -34,7 +34,7 @@ class _FancyFabState extends State<FancyFab>
     _animateIcon =
         Tween<double>(begin: 0.0, end: 1.0).animate(_animationController);
     _buttonColor = ColorTween(
-            begin: AppThemeColors.PrimaryColor,
+            begin: AppThemeColors.GroenUwMoederColor,
             end: AppThemeColors.Subtitle)
         .animate(CurvedAnimation(
       parent: _animationController,
@@ -76,6 +76,7 @@ class _FancyFabState extends State<FancyFab>
   Widget add() {
     return Container(
       child: FloatingActionButton(
+        heroTag: 'tag4',
         onPressed: null,
         tooltip: 'Add',
         child: Icon(
@@ -90,6 +91,7 @@ class _FancyFabState extends State<FancyFab>
   Widget image() {
     return Container(
       child: FloatingActionButton(
+        heroTag: 'tag3',
         onPressed: null,
         tooltip: 'Image',
         child: Icon(
@@ -104,6 +106,7 @@ class _FancyFabState extends State<FancyFab>
   Widget inbox() {
     return Container(
       child: FloatingActionButton(
+        heroTag: 'tag2',
         onPressed: null,
         tooltip: 'Inbox',
         child: Icon(
@@ -118,11 +121,13 @@ class _FancyFabState extends State<FancyFab>
   Widget toggle() {
     return Container(
       child: FloatingActionButton(
+        heroTag: 'tag1',
         backgroundColor: _buttonColor.value,
         onPressed: animate,
         tooltip: 'Toggle',
         child: AnimatedIcon(
           icon: AnimatedIcons.menu_close,
+          color: Colors.white,
           progress: _animateIcon,
         ),
       ),
@@ -133,6 +138,7 @@ class _FancyFabState extends State<FancyFab>
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
         Transform(
           transform: Matrix4.translationValues(
@@ -161,7 +167,7 @@ class _FancyFabState extends State<FancyFab>
         toggle(),
         Padding(
           padding: const EdgeInsets.only(
-            bottom: 25.0,
+            bottom: 22.0,
           ),
         )
       ],

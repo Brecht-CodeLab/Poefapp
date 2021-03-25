@@ -89,12 +89,83 @@ class _ThirdCardHomePage extends State<ThirdCardHomePage> {
               Container(
                 padding: EdgeInsets.only(right: 20.0, bottom: 5.0),
                 child: Text('3',
+                    style: TextStyle(
+                      color: AppThemeColors.LichtBlauw,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    )),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: EdgeInsets.only(left: 20.0, bottom: 5.0),
+                child: Text(
+                  'Gibbon',
                   style: TextStyle(
-                    color: AppThemeColors.LichtBlauw,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w900,
-                  )
+                      color: AppThemeColors.LichtBlauw,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w800),
                 ),
+              ),
+              Container(
+                padding: EdgeInsets.only(right: 20.0, bottom: 5.0),
+                child: Text('3',
+                    style: TextStyle(
+                      color: AppThemeColors.LichtBlauw,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    )),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: EdgeInsets.only(left: 20.0, bottom: 5.0),
+                child: Text(
+                  'Gibbon',
+                  style: TextStyle(
+                      color: AppThemeColors.LichtBlauw,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w800),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(right: 20.0, bottom: 5.0),
+                child: Text('3',
+                    style: TextStyle(
+                      color: AppThemeColors.LichtBlauw,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    )),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: EdgeInsets.only(left: 20.0, bottom: 5.0),
+                child: Text(
+                  'Gibbon',
+                  style: TextStyle(
+                      color: AppThemeColors.LichtBlauw,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w800),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(right: 20.0, bottom: 5.0),
+                child: Text('3',
+                    style: TextStyle(
+                      color: AppThemeColors.LichtBlauw,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    )),
               ),
             ],
           ),
