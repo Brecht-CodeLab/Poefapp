@@ -11,6 +11,8 @@ class ThirdCardHomePage extends StatefulWidget {
 }
 
 class _ThirdCardHomePage extends State<ThirdCardHomePage> {
+  void _teGevenCommentaar() {}
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -169,6 +171,39 @@ class _ThirdCardHomePage extends State<ThirdCardHomePage> {
               ),
             ],
           ),
+          SizedBox(
+              width: double.infinity,
+              child: RaisedButton(
+                onPressed: () {
+                  _teGevenCommentaar();
+                },
+                color: Colors.transparent,
+                disabledElevation: 0,
+                splashColor: Colors.transparent,
+                child: Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(left: 20.0, bottom: 5.0),
+                      child: Text(
+                        'Gibbon',
+                        style: TextStyle(
+                            color: AppThemeColors.LichtBlauw,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w800),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(right: 20.0, bottom: 5.0),
+                      child: Text('3',
+                          style: TextStyle(
+                            color: AppThemeColors.LichtBlauw,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w900,
+                          )),
+                    ),
+                  ],
+                ),
+              ))
         ],
       ),
     );
